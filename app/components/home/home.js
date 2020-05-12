@@ -7,10 +7,13 @@ import styles from './styles';
 
 export default function Home() {
   return(
-    <View /*onTouchMove={e => console.log(e.nativeEvent.locationX)} style={styles.container}*/>
-      <Menu />
-      <View style={styles.home}>
-        <Text>Home</Text>
+    <View>
+      <View style={styles.statusBar}></View>
+      <View>
+        <Menu />
+        <View style={styles.home}>
+          <Text>Home</Text>
+        </View>
       </View>
     </View>
   )

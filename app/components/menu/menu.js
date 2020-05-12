@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, Animated, TouchableOpacity, Dimensions} from 'react-native';
+import { Feather } from '@expo/vector-icons';
 
 import styles from './styles.js';
 
@@ -39,25 +40,30 @@ export default function Menu(){
       <Header menuOpened={() => setOpen(!open)} />
       <Animated.View style={[styles.container, {marginLeft: position}]}>
         <View style={styles.menu}>
-          <TouchableOpacity style={styles.menuItem} onPress={() => setOpen(!open)}>
-            <Text>Voltar</Text>
+          <View style={styles.goBackButton}>
+            <TouchableOpacity style={styles.icon} onPress={() => setOpen(!open)}>
+              <Feather name="arrow-left" color="#4D51FF" size={26}/>
+            </TouchableOpacity>
+          </View>
+          <TouchableOpacity style={styles.menuItem}>
+            <Text style={styles.textItem}>Meu perfil</Text>
           </TouchableOpacity>
           <TouchableOpacity style={styles.menuItem}>
-            <Text>Sair</Text>
+            <Text style={styles.textItem}>Carrinho</Text>
           </TouchableOpacity>
           <TouchableOpacity style={styles.menuItem}>
-            <Text>Sair</Text>
+            <Text style={styles.textItem}>Categorias</Text>
           </TouchableOpacity>
           <TouchableOpacity style={styles.menuItem}>
-            <Text>Sair</Text>
+            <Text style={styles.textItem}>Pedidos</Text>
           </TouchableOpacity>
           <TouchableOpacity style={styles.menuItem}>
-            <Text>Sair</Text>
+            <Text style={styles.textItem}>Sair</Text>
           </TouchableOpacity>
         </View>
         <AnimatedTouchableOpacity 
           activeOpacity={0}
-          style={styles.containerTrasnparent}
+          style={styles.containerTransparent}
           onPress={() => setOpen(!open)} 
           >     
         </AnimatedTouchableOpacity>

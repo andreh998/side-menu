@@ -1,14 +1,17 @@
-import {  StyleSheet } from 'react-native';
+import {  StyleSheet, Dimensions } from 'react-native';
 import Constants from 'expo-constants';
 
 export default StyleSheet.create({
-  container: {
-    marginTop: Constants.statusBarHeight
-  },
 
+  statusBar: {
+    backgroundColor: '#EAEFFF',
+    height: Constants.statusBarHeight,
+    width: Dimensions.get('window').width,
+  },
+  
   home: {
-    backgroundColor: '#D8D8D8',
-    height: 500,
+    backgroundColor: '#EAEFFF',
+    height: 550,
   },  
 
 });
