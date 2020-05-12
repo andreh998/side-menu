@@ -8,6 +8,7 @@ export default StyleSheet.create({
 
   home: {
     backgroundColor: '#D8D8D8',
+    height: 500,
   },  
 
 });
