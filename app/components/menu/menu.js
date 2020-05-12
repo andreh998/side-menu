@@ -11,7 +11,7 @@ export default function Menu(){
 
   const [open, setOpen] = useState(false);
   const [position] = useState(new Animated.Value(0));
-  const [opacity] = useState(new Animated.Value(0.0));
+  const [opacity] = useState(new Animated.Value(0));
 
   useEffect(() => {
     if(open){
@@ -21,7 +21,7 @@ export default function Menu(){
           duration: 500,
         }),
         Animated.timing(opacity, {
-          toValue: {x: 0.0},
+          toValue: 0.5,
           duration: 600
         })
       ]).start();
@@ -33,7 +33,7 @@ export default function Menu(){
           duration: 500,
         }),
         Animated.timing(opacity, {
-          toValue: {x: 0.3},
+          toValue: -0.6,
           duration: 600
         })
       ]).start();
@@ -66,7 +66,8 @@ export default function Menu(){
           </TouchableOpacity>
         </View>
         <AnimatedTouchableOpacity 
-          style={[styles.containerTrasnparent, {backgroundColor: `rgba(52, 52, 52, ${opacity})`}]}
+          activeOpacity={0.5}
+          style={[styles.containerTrasnparent, { opacity: opacity}]}
           onPress={() => setOpen(!open)} 
           >     
         </AnimatedTouchableOpacity>
