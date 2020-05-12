@@ -11,37 +11,27 @@ export default function Menu(){
 
   const [open, setOpen] = useState(false);
   const [position] = useState(new Animated.Value(0));
-  const [opacity] = useState(new Animated.Value(0));
+  //const [opacity] = useState(new Animated.Value(0));
 
   useEffect(() => {
     if(open){
-      Animated.parallel([
-        Animated.timing(position, {
-          toValue: 0,
-          duration: 500,
-        }),
-        Animated.timing(opacity, {
-          toValue: 0.5,
-          duration: 600
-        })
-      ]).start();
+
+      Animated.timing(position, {
+        toValue: 0,
+        duration: 500,
+      }).start();
+     
 
     } else {
-      Animated.parallel([
-        Animated.timing(position, {
-          toValue: -Dimensions.get('window').width,
-          duration: 500,
-        }),
-        Animated.timing(opacity, {
-          toValue: -0.6,
-          duration: 600
-        })
-      ]).start();
+
+      Animated.timing(position, {
+        toValue: -Dimensions.get('window').width,
+        duration: 500,
+      }).start();
 
     }
     console.log('OPEN: ', open);
     console.log('POSITION: ', position);
-    console.log('TRANSPARENT', opacity);
   }, [open]);
 
   return(
@@ -66,8 +56,8 @@ export default function Menu(){
           </TouchableOpacity>
         </View>
         <AnimatedTouchableOpacity 
-          activeOpacity={0.5}
-          style={[styles.containerTrasnparent, { opacity: opacity}]}
+          activeOpacity={0}
+          style={styles.containerTrasnparent}
           onPress={() => setOpen(!open)} 
           >     
         </AnimatedTouchableOpacity>

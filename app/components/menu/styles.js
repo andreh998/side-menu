@@ -24,7 +24,7 @@ export default StyleSheet.create({
   },
 
   containerTrasnparent: {
-    backgroundColor: '#222',
+    backgroundColor: 'rgba(255,255,255,0)',
     width: Dimensions.get('window').width * 0.3,
     height: Dimensions.get('window').height
   },
